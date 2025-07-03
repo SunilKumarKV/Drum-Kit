@@ -1,80 +1,127 @@
+/* Reset and base */
 body {
   text-align: center;
   background-color: #283149;
+  font-family: 'Arvo', serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 h1 {
   font-size: 5rem;
   color: #dbedf3;
-  font-family: "Arvo", cursive;
   text-shadow: 3px 0 #da0463;
+  margin-bottom: 40px;
+  user-select: none;
 }
 
 footer {
   color: #dbedf3;
   font-family: sans-serif;
+  margin-top: 40px;
+  font-size: 1rem;
+  user-select: none;
 }
 
-.w {
-  background-image: url("images/tom1.png");
-}
-
-.a {
-  background-image: url("images/tom2.png");
-}
-
-.s {
-  background-image: url("images/tom3.png");
-}
-
-.d {
-  background-image: url("images/tom4.png");
-}
-
-.j {
-  background-image: url("images/snare.png");
-}
-
-.k {
-  background-image: url("images/kick.png");
-}
-
-.l {
-  background-image: url("images/crash.png");
-}
-
+/* Drum buttons container */
 .set {
-  margin: 10% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.game-over {
-  background-color: red;
-  opacity: 0.8;
-}
-
-.pressed {
-  box-shadow: 0 3px 4px 0 #dbedf3;
-  opacity: 0.5;
-}
-
-.red {
-  color: red;
-}
-
+/* Drum buttons base style */
 .drum {
   outline: none;
   border: 10px solid #404b69;
   font-size: 5rem;
-  font-family: "Arvo", cursive;
-  line-height: 2;
+  font-family: 'Arvo', serif;
   font-weight: 900;
   color: #da0463;
   text-shadow: 3px 0 #dbedf3;
   border-radius: 15px;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   text-align: center;
-  margin: 10px;
+  line-height: 140px;
+  cursor: pointer;
   background-color: white;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+  position: relative;
+}
+
+/* Background images for each drum button */
+.w {
+  background-image: url("images/tom1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+.a {
+  background-image: url("images/tom2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+.s {
+  background-image: url("images/tom3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+.d {
+  background-image: url("images/tom4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+.j {
+  background-image: url("images/snare.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+.k {
+  background-image: url("images/kick.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+.l {
+  background-image: url("images/crash.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+}
+
+/* Pressed animation: scale down + shadow */
+.pressed {
+  box-shadow: 0 5px 15px 0 #da0463;
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+/* Hover effect for better UX */
+.drum:hover {
+  background-color: #ff6b81;
+  color: white;
+  box-shadow: 0 5px 15px 0 #da0463;
+  transform: scale(1.05);
+  transition: all 0.15s ease;
 }
